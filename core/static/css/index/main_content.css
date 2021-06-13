@@ -53,11 +53,14 @@
     padding: 15px;
 }
 
-.table td {
+.table td{
     border-bottom: #412234 solid 1px;
     padding: 15px;
 }
 
+.table tr:last-child td {
+    border-bottom: none;
+}
 
 .item {
     font-family: Helvetica;
