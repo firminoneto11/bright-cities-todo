@@ -6,15 +6,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!--Calling the CSS-->
+    <link rel="stylesheet" href="{% static 'css/index/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/center.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/main_content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/do_something.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/go_create.css' %}">
+    <!--Title-->
     <title>Todo</title>
 </head>
 
 <body>
-    <h1>home page</h1>
-    <p>Here will be listed all the active and non active tasks</p>
+    <!--Div to centralize the content-->
+    <div class="center">
+        <!--Main content div-->
+        <div class="main-content">
+            <!--This part will be displayed if there are any data in the database-->
+            {% if data %}
+            <h1 class="title">Current Tasks</h1>
+            <h3 class="subtitle">Click on a task to edit or delete</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in data %}
+                    <tr data-href="{% url 'create' %}">
+                        {% if task.completed %}
+                        <td class="item completed">{{ task.name }}</td>
+                        <td class="item completed">Done!</td>
+                        {% else %}
+                        <td class="item not-completed">{{ task.name }}</td>
+                        <td class="item not-completed">To Do!</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <!--And this will be displayed if there aren't any data in the database-->
+            {% else %}
+            <p class="lazy">There are no tasks at the moment :(</p>
+            <p class="lazy">Go do something!</p>
+            {% endif %}
 
-    <a href="{% url 'create' %}">Go to create a new task</a>
+            <!--Link to the page that will create a new task-->
+            <a class="go_create" href="{% url 'create' %}"><span class="span-text">Create a new text</span>
+                {% block content %}
+                {% include 'notepad_svg.html' %}
+                {% endblock %}
+            </a>
+        </div>
+    </div>
+
+    <script src="{% static 'js/clickable.js' %}"></script>
 </body>
 
 </html>

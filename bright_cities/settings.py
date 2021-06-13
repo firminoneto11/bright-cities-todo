@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'bright_cities.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'tasks_database.db',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        'NAME': 'brightcities',
+        'USER': 'firmino',
+        'PASSWORD': 'firmino'
     }
 }
 

@@ -1,0 +1,25 @@
+
+.center {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #B49FCC, #6D466B);
+}
+
+/* This part will change the CSS effect for each one of the rows */
+tr[data-href] {
+    transition: 0.3s;
+}
+
+tr[data-href]:hover {
+    cursor: pointer;
+    background-color: #B49FCC;
+    color: #412234;
+}
+
+tr[data-href]:active {
+    background-color: #EAD7D7;
+    color: black;
+}
