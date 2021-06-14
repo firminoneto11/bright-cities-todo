@@ -20,11 +20,8 @@ def index(request):
 def task(request, pk):
     method = str(request.method)
     current_instance = Task.objects.get(pk=pk)
-    context = {}
+    context = {'task': current_instance}
     if method == 'GET':
-        context = {
-            'task': current_instance
-        }
         return render(request, 'task.html', context)
     elif method == 'POST':
         form = TaskForm(request.POST, instance=current_instance)
@@ -39,6 +36,7 @@ def task(request, pk):
             form.save(commit=True)
             return redirect(index)
         else:
+            request.method = 'GET'
             return render(request, 'task.html', context)
 
 

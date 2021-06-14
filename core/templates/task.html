@@ -26,10 +26,10 @@
             <!--Edit form area-->
             <form id="edit_form" class="edit_form" action="{% url 'task' task.pk %}" method="POST" autocomplete="off">
                 {% csrf_token %}
-                <label for="name">Task Name (Required)</label>
+                <label for="name">Edit the task's name (Required)</label>
                 <input id="name" class="input" name="name" type="text"
                     placeholder="Insert your new task's name | 50 characters" maxlength="50" value="{{ task.name }}">
-                <label for="description">Description</label>
+                <label for="description">Edit the task's description</label>
                 <textarea id="description" class="input" name="description" rows="3"
                     placeholder="Insert your new task's description | 255 characters"
                     maxlength="255">{{ task.description }}</textarea>
