@@ -1,0 +1,156 @@
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+.main-content {
+    animation: transitionIn 1s;
+    border-radius: 20px;
+    padding: 100px;
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+    font-family: Helvetica;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+    margin-bottom: 5%;
+}
+
+.subtitle {
+    font-family: Helvetica;
+    font-size: 1rem;
+    text-align: center;
+    color: black;
+    margin-bottom: 5%;
+}
+
+.edit_form label {
+    font-family: Helvetica;
+    font-size: 1rem;
+}
+
+.edit_form textarea {
+    resize: none;
+    font-family: helvetica;
+}
+
+.edit_form {
+    width: 100%;
+}
+
+.input {
+    display: block;
+    padding: 10px;
+    border: #412234 solid 2px;
+    border-radius: 5px;
+    width: 100%;
+    transition: 0.3s;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.input:hover {
+    border: #B49FCC solid 2px;
+}
+
+.input:focus {
+    outline: none;
+    border: blue solid 2px;
+}
+
+.button {
+    display: block;
+    font-family: Helvetica;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 5%;
+    background-color: #412234;
+    border: none;
+    color: #ffffff;
+    border-radius: 99px;
+    transition: 0.3s;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background-color: #B49FCC;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #EAD7D7;
+    color: black;
+}
+
+.back-home {
+    font-family: Helvetica;
+    display: block;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    background-color: #B49FCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    color: black;
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-home:hover {
+    background-color: #412234;
+    color: #ffffff;
+}
+
+.back-home:active {
+    background-color: #EAD7D7;
+    color: black;
+}
+
+.span-text {
+    margin-right: 0.5rem;
+}
+
+.back-home:hover svg path {
+    fill: #ffffff;
+    transition: 0.3s;
+}
+
+.task-icon path {
+    fill: lightgray;
+}
+
+/* Error class that will be added into the input tag if a error occurs */
+.error {
+    border: rgb(255, 125, 125) solid 2px;
+    border-radius: 5px;
+}
+
+.error:hover {
+    border: red solid 2px;
+}
+
+.error:focus {
+    border: red solid 2px;
+}

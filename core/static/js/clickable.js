@@ -5,7 +5,7 @@ const link_href = () => {
     */
     const rows = document.querySelectorAll("tr[data-href]")
 
-    for (row of rows) {
+    for (let row of rows) {
         row.addEventListener('click', () => { window.location.href = row.dataset.href })
     }
 }

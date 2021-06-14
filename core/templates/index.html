@@ -36,7 +36,7 @@
                 </thead>
                 <tbody>
                     {% for task in data %}
-                    <tr data-href="{% url 'create' %}" class="tbody_child" data-status="{{ task.completed }}">
+                    <tr data-href="{% url 'task' task.pk %}" class="tbody_child" data-status="{{ task.completed }}">
                         {% if task.completed %}
                         <td class="item completed">{{ task.name }}</td>
                         <td class="item completed">Done!</td>
@@ -48,13 +48,7 @@
                     {% endfor %}
                 </tbody>
             </table>
-            <!--And this will be displayed if there aren't any data in the database-->
-            {% else %}
-            <p class="lazy">There are no tasks at the moment :(</p>
-            <p class="lazy">Go do something!</p>
-            {% endif %}
-
-            <!--Radio Button-->
+            <!--Radio Buttons-->
             <div class="radio-elements">
                 <h3>Filters</h3>
                 <label for="all">All</label>
@@ -64,9 +58,14 @@
                 <label for="todo">To do</label>
                 <input type="radio" name="filter" id="todo">
             </div>
+            <!--And this will be displayed if there aren't any data in the database-->
+            {% else %}
+            <p class="lazy">There are no tasks at the moment :(</p>
+            <p class="lazy">Create some!</p>
+            {% endif %}
 
             <!--Link to the page that will create a new task-->
-            <a class="go_create" href="{% url 'create' %}"><span class="span-text">Create a new text</span>
+            <a class="go_create" href="{% url 'create' %}"><span class="span-text">Create a new task</span>
                 {% block content %}
                 {% include 'notepad_svg.html' %}
                 {% endblock %}
@@ -74,6 +73,7 @@
         </div>
     </div>
 
+    <!--Calling the Javascript files-->
     <script src="{% static 'js/clickable.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
 </body>

@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Calling the CSS Files-->
+    <link rel="stylesheet" href="{% static 'css/task/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/task/center.css' %}">
+    <link rel="stylesheet" href="{% static 'css/task/main_content.css' %}">
+    <link rel="stylesheet" href="{% static 'css/task/radio.css' %}">
+    <!--Title-->
+    <title>Todo</title>
+</head>
+
+<body>
+    <!--Div to centralize the content-->
+    <div class="center">
+        <!--Main content div-->
+        <div class="main-content">
+            <h1 class="title">{{ task.name }}</h1>
+            <p class="subtitle">Edit your task</p>
+
+            <!--Edit form area-->
+            <form id="edit_form" class="edit_form" action="{% url 'task' task.pk %}" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <label for="name">Task Name (Required)</label>
+                <input id="name" class="input" name="name" type="text"
+                    placeholder="Insert your new task's name | 50 characters" maxlength="50" value="{{ task.name }}">
+                <label for="description">Description</label>
+                <textarea id="description" class="input" name="description" rows="3"
+                    placeholder="Insert your new task's description | 255 characters"
+                    maxlength="255">{{ task.description }}</textarea>
+                <!--Radio Buttons-->
+                <div class="radio-elements">
+                    <h3>Status</h3>
+                    {% if task.completed %}
+                    <label for="done">Done</label>
+                    <input id="done" type="radio" name="completed" value="true" checked>
+
+                    <label for="todo">To do</label>
+                    <input id="todo" type="radio" name="completed" value="false">
+                    {% else %}
+                    <label for="done">Done</label>
+                    <input id="done" type="radio" name="completed" value="true">
+
+                    <label for="todo">To do</label>
+                    <input id="todo" type="radio" name="completed" value="false" checked>
+                    {% endif %}
+                </div>
+                <!--Submit button-->
+                <button class="button" type="submit"><span class="span-text">Update task</span>
+                    {% block content %}
+                    {% include 'notepad_svg.html' %}
+                </button>
+            </form>
+            <!--End edit form area-->
+
+            <!--Delete form area-->
+            <!--
+            <form id="delete_form" class="delete_form" action="{% url 'task' task.id %}" method="DELETE">
+                {% csrf_token %}
+                <button class="button" type="submit">Delete task</button>
+            </form>
+            -->
+            <!--End delete form area-->
+
+            <!--Back to home page button-->
+            <a class="back-home" href="{% url 'home' %}"><span class="span-text">Home</span>
+                {% include 'house_svg.html' %}
+                {% endblock %}
+            </a>
+        </div>
+    </div>
+
+    <!--Calling the Javascript files-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="{% static 'js/update.js' %}"></script>
+</body>
+
+</html>

@@ -8,12 +8,38 @@ from core.models import Task
 
 def index(request):
     """
-    index.html
+    This is the main view for the index.html file. Every time the 'home' url is requested, the main page will be shown
+    with this view. The items that are stored in the database will be passed as a context within a django template.
     """
     context = {
         'data': Task.objects.all()
     }
     return render(request, 'index.html', context)
+
+
+def task(request, pk):
+    method = str(request.method)
+    current_instance = Task.objects.get(pk=pk)
+    context = {}
+    if method == 'GET':
+        context = {
+            'task': current_instance
+        }
+        return render(request, 'task.html', context)
+    elif method == 'POST':
+        form = TaskForm(request.POST, instance=current_instance)
+        if form.is_valid():
+            post_data = request.POST
+            for key in post_data.keys():
+                if key == 'completed':
+                    if post_data.get(key) == 'true':
+                        current_instance.completed = True
+                    else:
+                        current_instance.completed = False
+            form.save(commit=True)
+            return redirect(index)
+        else:
+            return render(request, 'task.html', context)
 
 
 def create(request):

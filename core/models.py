@@ -8,11 +8,8 @@ class Task(models.Model):
     attribute.
     """
     name = models.CharField(verbose_name='Name', max_length=50)
-    description = models.CharField(verbose_name='Description', max_length=255, default='')
+    description = models.CharField(verbose_name='Description', max_length=255, blank=True)
     completed = models.BooleanField(verbose_name='Completed', default=False)
 
-
-"""
-to do:
-    Implement the logic in the database/form to accept a blank/null value in the description field
-"""
+    class Meta:
+        ordering = '-id',
