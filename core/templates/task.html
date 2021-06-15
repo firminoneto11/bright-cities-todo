@@ -11,13 +11,18 @@
     <link rel="stylesheet" href="{% static 'css/task/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/task/main_content.css' %}">
     <link rel="stylesheet" href="{% static 'css/task/radio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
     <title>Todo</title>
+    <!--Icon-->
+    <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
 </head>
 
 <body>
     <!--Div to centralize the content-->
-    <div class="center">
+    <main class="center">
         <!--Main content div-->
         <div class="main-content">
             <h1 class="title">{{ task.name }}</h1>
@@ -64,6 +69,7 @@
             <form id="delete_form" class="delete-form" action="{% url 'task' task.id %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="method_name" value="DELETE">
+                <!--Submit button-->
                 <button class="button red" type="submit"><span class="span-text">Delete task</span>
                     {% include 'delete_svg.html' %}
                 </button>
@@ -76,7 +82,19 @@
                 {% endblock %}
             </a>
         </div>
-    </div>
+    </main>
+
+    <!--Footer-->
+    <footer class="footer">
+        <p class="footer-title">Developed by Firmino Neto</p>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/firmino-neto-4a0010158/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/firminoneto11" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/firminoneto11/" target="_blank"><i
+                    class="fab fa-instagram-square"></i></a>
+        </div>
+    </footer>
 
     <!--Calling the Javascript files-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

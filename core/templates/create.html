@@ -6,21 +6,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Calling the CSS files-->
     <link rel="stylesheet" href="{% static 'css/creation/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/general.css' %}">
     <link rel="stylesheet" href="{% static 'css/creation/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/creation/card.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
+    <!--Title-->
     <title>Todo</title>
+    <!--Icon-->
+    <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
 </head>
 
 <body>
     <!--Div to centralize the content-->
-    <div class="center">
+    <main class="center">
         <!--Main content div-->
         <div class="card">
             <h1 class="title">Create a new task</h1>
 
+            <!--Create form area-->
             <form id="form" class="form" action="{% url 'create' %}" method="POST" autocomplete="off">
                 {% csrf_token %}
                 <label for="name">Task Name (Required)</label>
@@ -29,19 +36,35 @@
                 <label for="description">Description</label>
                 <textarea id="description" class="input" name="description" rows="3"
                     placeholder="Insert your new task's description | 255 characters" maxlength="255"></textarea>
+                <!--Submit button-->
                 <button class="button" type="submit"><span class="span-text">Create Task</span>
                     {% block content %}
                     {% include 'notepad_svg.html' %}
                 </button>
             </form>
+            <!--End create form area-->
 
+            <!--Back to home page button-->
             <a class="back-home" href="{% url 'home' %}"><span class="span-text">Home</span>
                 {% include 'house_svg.html' %}
                 {% endblock %}
             </a>
         </div>
-    </div>
+    </main>
 
+    <!--Footer-->
+    <footer class="footer">
+        <p class="footer-title">Developed by Firmino Neto</p>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/firmino-neto-4a0010158/" target="_blank"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/firminoneto11" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/firminoneto11/" target="_blank"><i
+                    class="fab fa-instagram-square"></i></a>
+        </div>
+    </footer>
+
+    <!--Calling the Javascript files-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/create.js' %}"></script>
 </body>
