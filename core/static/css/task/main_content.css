@@ -88,6 +88,7 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
+
 .button:hover {
     background-color: #B49FCC;
     cursor: pointer;
@@ -96,6 +97,11 @@
 .button:active {
     background-color: #EAD7D7;
     color: black;
+}
+
+.red {
+    background-color: rgb(255, 125, 125);
+    color: #ffffff;
 }
 
 .back-home {
@@ -139,6 +145,10 @@
 
 .task-icon path {
     fill: lightgray;
+}
+
+.delete-icon path {
+    fill: #ffffff;
 }
 
 /* Error class that will be added into the input tag if a error occurs */

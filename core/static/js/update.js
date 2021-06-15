@@ -1,4 +1,4 @@
-const validate = (event) => {
+const validate_update = (event) => {
     // Preventing the default action from the form
     event.preventDefault()
 
@@ -32,7 +32,7 @@ const validate = (event) => {
     swal({
         title: "Confirm update",
         text: "Are you really sure that you want to update this task?",
-        icon: "warning",
+        icon: "info",
         buttons: true,
     }).then((willDelete) => {
         if (willDelete) {
@@ -50,4 +50,4 @@ const validate = (event) => {
 }
 
 // Biding the event listener to the validate arrow function above
-document.getElementById('edit_form').addEventListener('submit', validate)
+document.getElementById('edit_form').addEventListener('submit', validate_update)

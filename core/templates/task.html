@@ -21,11 +21,12 @@
         <!--Main content div-->
         <div class="main-content">
             <h1 class="title">{{ task.name }}</h1>
-            <p class="subtitle">Edit your task</p>
+            <p class="subtitle">Edit or delete your task</p>
 
             <!--Edit form area-->
             <form id="edit_form" class="edit_form" action="{% url 'task' task.pk %}" method="POST" autocomplete="off">
                 {% csrf_token %}
+                <input type="hidden" name="method_name" value="PUT">
                 <label for="name">Edit the task's name (Required)</label>
                 <input id="name" class="input" name="name" type="text"
                     placeholder="Insert your new task's name | 50 characters" maxlength="50" value="{{ task.name }}">
@@ -58,13 +59,15 @@
             </form>
             <!--End edit form area-->
 
+
             <!--Delete form area-->
-            <!--
-            <form id="delete_form" class="delete_form" action="{% url 'task' task.id %}" method="DELETE">
+            <form id="delete_form" class="delete-form" action="{% url 'task' task.id %}" method="POST">
                 {% csrf_token %}
-                <button class="button" type="submit">Delete task</button>
+                <input type="hidden" name="method_name" value="DELETE">
+                <button class="button red" type="submit"><span class="span-text">Delete task</span>
+                    {% include 'delete_svg.html' %}
+                </button>
             </form>
-            -->
             <!--End delete form area-->
 
             <!--Back to home page button-->
@@ -78,6 +81,7 @@
     <!--Calling the Javascript files-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/update.js' %}"></script>
+    <script src="{% static 'js/delete.js' %}"></script>
 </body>
 
 </html>

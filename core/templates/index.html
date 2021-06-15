@@ -8,19 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Calling the CSS-->
     <link rel="stylesheet" href="{% static 'css/index/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index/general.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/main_content.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/do_something.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/radio.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/go_create.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
     <title>Todo</title>
 </head>
 
 <body>
     <!--Div to centralize the content-->
-    <div class="center">
+    <main class="center">
         <!--Main content div-->
         <div class="main-content">
             <!--This part will be displayed if there are any data in the database-->
@@ -71,7 +73,18 @@
                 {% endblock %}
             </a>
         </div>
-    </div>
+        <!--Footer-->
+        <footer class="footer">
+            <p class="footer-title">Developed by Firmino Neto</p>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/firmino-neto-4a0010158/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/firminoneto11" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/firminoneto11/" target="_blank"><i
+                        class="fab fa-instagram-square"></i></a>
+            </div>
+        </footer>
+    </main>
 
     <!--Calling the Javascript files-->
     <script src="{% static 'js/clickable.js' %}"></script>
