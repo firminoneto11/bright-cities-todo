@@ -34,13 +34,15 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Task</th>
                         <th>Name</th>
                         <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for task in data %}
+                    {% for task, element in data %}
                     <tr data-href="{% url 'task' task.pk %}" class="tbody_child" data-status="{{ task.completed }}">
+                        <td class="item">{{ element }}</td>
                         {% if task.completed %}
                         <td class="item completed">{{ task.name }}</td>
                         <td class="item completed">Done!</td>

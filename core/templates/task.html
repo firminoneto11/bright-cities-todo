@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/task/main_content.css' %}">
     <link rel="stylesheet" href="{% static 'css/task/radio.css' %}">
     <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
+    <link rel="stylesheet" href="{% static 'css/panels.css' %}">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
@@ -32,13 +33,17 @@
             <form id="edit_form" class="edit_form" action="{% url 'task' task.pk %}" method="POST" autocomplete="off">
                 {% csrf_token %}
                 <input type="hidden" name="method_name" value="PUT">
-                <label for="name">Edit the task's name (Required)</label>
-                <input id="name" class="input" name="name" type="text"
-                    placeholder="Insert your new task's name | 50 characters" maxlength="50" value="{{ task.name }}">
+                <label for="task">Edit the task's name (Required)</label>
+                <input id="task" class="input" name="name" type="text"
+                    placeholder="Insert your new task's name | 25 characters" maxlength="25" oninput="task_char_count()"
+                    value="{{ task.name }}">
+                <p id="task_panel" class="panel"></p>
+
                 <label for="description">Edit the task's description</label>
                 <textarea id="description" class="input" name="description" rows="3"
-                    placeholder="Insert your new task's description | 255 characters"
-                    maxlength="255">{{ task.description }}</textarea>
+                    placeholder="Insert your new task's description | 255 characters" maxlength="255"
+                    oninput="description_char_count()">{{ task.description }}</textarea>
+                <p id="description_panel" class="panel"></p>
                 <!--Radio Buttons-->
                 <div class="radio-elements">
                     <h3>Status</h3>
@@ -100,6 +105,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/update.js' %}"></script>
     <script src="{% static 'js/delete.js' %}"></script>
+    <script src="{% static 'js/char_counter.js' %}"></script>
 </body>
 
 </html>

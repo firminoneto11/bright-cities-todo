@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Calling the CSS files-->
     <link rel="stylesheet" href="{% static 'css/creation/reset.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index/general.css' %}">
     <link rel="stylesheet" href="{% static 'css/creation/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/creation/card.css' %}">
     <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
+    <link rel="stylesheet" href="{% static 'css/panels.css' %}">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
@@ -30,12 +30,18 @@
             <!--Create form area-->
             <form id="form" class="form" action="{% url 'create' %}" method="POST" autocomplete="off">
                 {% csrf_token %}
-                <label for="name">Task Name (Required)</label>
+                <label for="task">Task Name (Required)</label>
                 <input id="task" class="input" name="name" type="text"
-                    placeholder="Insert your new task's name | 50 characters" maxlength="50">
+                    placeholder="Insert your new task's name | 25 characters" maxlength="25"
+                    oninput="task_char_count()">
+                <p id="task_panel" class="panel">0/25</p>
+
                 <label for="description">Description</label>
                 <textarea id="description" class="input" name="description" rows="3"
-                    placeholder="Insert your new task's description | 255 characters" maxlength="255"></textarea>
+                    placeholder="Insert your new task's description | 255 characters" maxlength="255"
+                    oninput="description_char_count()"></textarea>
+                <p id="description_panel" class="panel">0/255</p>
+
                 <!--Submit button-->
                 <button class="button" type="submit"><span class="span-text">Create Task</span>
                     {% block content %}
@@ -67,6 +73,7 @@
     <!--Calling the Javascript files-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{% static 'js/create.js' %}"></script>
+    <script src="{% static 'js/char_counter.js' %}"></script>
 </body>
 
 </html>

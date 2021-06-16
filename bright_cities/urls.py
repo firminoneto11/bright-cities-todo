@@ -21,7 +21,7 @@ from django.urls import path, include
 # Django expects this 'urlpatterns' list to know what look for when a specific route is called via request
 urlpatterns = [
     # django admin route/url
-    path('admin/', admin.site.urls),
+    path('admin_secure_route/', admin.site.urls),
     # Including any url/route that is defined in the include function with the core.urls module
     path('', include('core.urls'))
 ]

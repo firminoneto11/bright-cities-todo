@@ -11,8 +11,9 @@ def index(request):
     This is the main view for the index.html file. Every time the 'home' url is requested, the main page will be shown
     with this view. The items that are stored in the database will be passed as a context within a django template.
     """
+    context_data = zip(Task.objects.all(), [num + 1 for num in range(Task.objects.count())])
     context = {
-        'data': Task.objects.all()
+        'data': context_data
     }
     return render(request, 'index.html', context)
 
@@ -40,9 +41,9 @@ def task(request, pk):
         if method_name == 'PUT':
             form = TaskForm(post_data, instance=current_instance)
             if form.is_valid():
-                if task_status == 'true':
+                if task_status == 'true' and current_instance.completed is False:
                     current_instance.completed = True
-                else:
+                elif task_status == 'false' and current_instance.completed is True:
                     current_instance.completed = False
                 form.save(commit=True)
                 return redirect(index)

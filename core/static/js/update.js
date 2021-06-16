@@ -3,7 +3,7 @@ const validate_update = (event) => {
     event.preventDefault()
 
     // Getting the value of the required input
-    const task = document.getElementById('name')
+    const task = document.getElementById('task')
 
     // Validating if the length of the task is higher than 0
     if (task.value.length === 0) {
