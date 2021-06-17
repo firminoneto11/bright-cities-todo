@@ -39,10 +39,10 @@
                         <th>Status</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {% for task, element in data %}
+                <tbody id="tbody">
+                    {% for task in data %}
                     <tr data-href="{% url 'task' task.pk %}" class="tbody_child" data-status="{{ task.completed }}">
-                        <td class="item">{{ element }}</td>
+                        <td class="item"></td>
                         {% if task.completed %}
                         <td class="item completed">{{ task.name }}</td>
                         <td class="item completed">Done!</td>
@@ -54,8 +54,10 @@
                     {% endfor %}
                 </tbody>
             </table>
+            <!--Quantity of items-->
+            <p id="quantity_display" class="quantity"></p>
             <!--Radio Buttons-->
-            <div class="radio-elements">
+            <div id="radio_elements" class="radio-elements">
                 <h3>Filters</h3>
                 <label for="all">All</label>
                 <input type="radio" name="filter" id="all" checked>
@@ -94,6 +96,7 @@
     <!--Calling the Javascript files-->
     <script src="{% static 'js/clickable.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
+    <script src="{% static 'js/quantity.js' %}"></script>
 </body>
 
 </html>

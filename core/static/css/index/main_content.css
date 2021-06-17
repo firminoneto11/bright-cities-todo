@@ -75,3 +75,11 @@
 .not-completed {
     text-decoration: none;
 }
+
+.quantity {
+    text-align: right;
+    font-family: helvetica;
+    font-size: 0.9rem;
+    color: black;
+    margin-top: 0.5rem;
+}

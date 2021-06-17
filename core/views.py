@@ -7,11 +7,7 @@ from core.models import Task
 
 
 def index(request):
-    """
-    This is the main view for the index.html file. Every time the 'home' url is requested, the main page will be shown
-    with this view. The items that are stored in the database will be passed as a context within a django template.
-    """
-    context_data = zip(Task.objects.all(), [num + 1 for num in range(Task.objects.count())])
+    context_data = Task.objects.all()
     context = {
         'data': context_data
     }

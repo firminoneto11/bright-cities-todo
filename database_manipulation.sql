@@ -30,7 +30,6 @@ commit;
 -- Couple selects
 select id, name, description, completed from core_task order by id asc;
 
-
 /*
 -- Reset script
 -- Starting the transaction
