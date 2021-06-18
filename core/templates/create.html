@@ -20,42 +20,38 @@
     <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
 </head>
 
-<body>
-    <!--Div to centralize the content-->
-    <main class="center">
-        <!--Main content div-->
-        <div class="card">
-            <h1 class="title">Create a new task</h1>
+<body class="center">
+    <!--Main content div-->
+    <main class="card">
+        <h1 class="title">Create a new task</h1>
 
-            <!--Create form area-->
-            <form id="form" class="form" action="{% url 'create' %}" method="POST" autocomplete="off">
-                {% csrf_token %}
-                <label for="task">Task Name (Required)</label>
-                <input id="task" class="input" name="name" type="text"
-                    placeholder="Insert your new task's name | 25 characters" maxlength="25"
-                    oninput="task_char_count()">
-                <p id="task_panel" class="panel">0/25</p>
+        <!--Create form area-->
+        <form id="form" class="form" action="{% url 'create' %}" method="POST" autocomplete="off">
+            {% csrf_token %}
+            <label for="task">Task Name (Required)</label>
+            <input id="task" class="input" name="name" type="text"
+                placeholder="Insert your new task's name | 25 characters" maxlength="25" oninput="task_char_count()">
+            <p id="task_panel" class="panel">0/25</p>
 
-                <label for="description">Description</label>
-                <textarea id="description" class="input" name="description" rows="3"
-                    placeholder="Insert your new task's description | 255 characters" maxlength="255"
-                    oninput="description_char_count()"></textarea>
-                <p id="description_panel" class="panel">0/255</p>
+            <label for="description">Description</label>
+            <textarea id="description" class="input" name="description" rows="3"
+                placeholder="Insert your new task's description | 255 characters" maxlength="255"
+                oninput="description_char_count()"></textarea>
+            <p id="description_panel" class="panel">0/255</p>
 
-                <!--Submit button-->
-                <button class="button" type="submit"><span class="span-text">Create Task</span>
-                    {% block content %}
-                    {% include 'notepad_svg.html' %}
-                </button>
-            </form>
-            <!--End create form area-->
+            <!--Submit button-->
+            <button class="button" type="submit"><span class="span-text">Create Task</span>
+                {% block content %}
+                {% include 'notepad_svg.html' %}
+            </button>
+        </form>
+        <!--End create form area-->
 
-            <!--Back to home page button-->
-            <a class="back-home" href="{% url 'home' %}"><span class="span-text">Home</span>
-                {% include 'house_svg.html' %}
-                {% endblock %}
-            </a>
-        </div>
+        <!--Back to home page button-->
+        <a class="back-home" href="{% url 'home' %}"><span class="span-text">Home</span>
+            {% include 'house_svg.html' %}
+            {% endblock %}
+        </a>
     </main>
 
     <!--Footer-->
