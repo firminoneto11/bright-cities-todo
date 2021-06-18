@@ -1,0 +1,12 @@
+
+.no-items {
+    font-family: helvetica;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #EAD7D7;
+    color: #412234;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 44px;
+    width: 100%;
+}

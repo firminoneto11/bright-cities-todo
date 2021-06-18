@@ -11,12 +11,11 @@
     <link rel="stylesheet" href="{% static 'css/task/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/task/main_content.css' %}">
     <link rel="stylesheet" href="{% static 'css/task/radio.css' %}">
-    <link rel="stylesheet" href="{% static 'css/my_links.css' %}">
     <link rel="stylesheet" href="{% static 'css/panels.css' %}">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
-    <title>Todo</title>
+    <title>Bright Cities Todo List</title>
     <!--Icon-->
     <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
 </head>
@@ -67,7 +66,6 @@
         </form>
         <!--End edit form area-->
 
-
         <!--Delete form area-->
         <form id="delete_form" class="delete-form" action="{% url 'task' task.id %}" method="POST">
             {% csrf_token %}
@@ -85,18 +83,6 @@
             {% endblock %}
         </a>
     </main>
-
-    <!--Footer-->
-    <footer class="footer">
-        <p class="footer-title">Developed by Firmino Neto</p>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/firmino-neto-4a0010158/" target="_blank"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/firminoneto11" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/firminoneto11/" target="_blank"><i
-                    class="fab fa-instagram-square"></i></a>
-        </div>
-    </footer>
 
     <!--Calling the Javascript files-->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

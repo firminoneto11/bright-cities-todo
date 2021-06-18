@@ -11,13 +11,14 @@
     <link rel="stylesheet" href="{% static 'css/index/center.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/main_content.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/other_main_content.css' %}">
-    <link rel="stylesheet" href="{% static 'css/index/do_something.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/radio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/do_something.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/go_create.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index/no_items.css' %}">
     <!--Font Awesome-->
     <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
-    <title>Todo</title>
+    <title>Bright Cities Todo List</title>
     <!--Icon-->
     <link rel="shortcut icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
 </head>
@@ -29,7 +30,8 @@
     <main class="main-content">
         <h1 class="title">Current Tasks</h1>
         <p class="subtitle">Click on a task to edit or delete</p>
-        <div class="table-wrapper">
+        <p id="no_items" class="no-items no-display">Nothing to show with the current filter</p>
+        <div id="wrapper" class="table-wrapper">
             <table class="table">
                 <thead>
                     <tr>
@@ -68,7 +70,7 @@
         </div>
 
         <!--Link to the page that will create a new task-->
-        <a class="go_create" href="{% url 'create' %}"><span class="span-text">Create a new task</span>
+        <a class="go_create" href="{% url 'create' %}"><span class="span-text">New task</span>
             {% block content %}
             {% include 'notepad_svg.html' %}
             {% endblock %}
@@ -82,7 +84,7 @@
             <p class="lazy">There are no tasks at the moment :(</p>
             <p class="lazy">Create some!</p>
             <!--Link to the page that will create a new task-->
-            <a class="go_create" href="{% url 'create' %}"><span class="span-text">Create a new task</span><svg
+            <a class="go_create" href="{% url 'create' %}"><span class="span-text">New task</span><svg
                     width="20px" class="task-icon" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                     xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
@@ -117,6 +119,7 @@
     <script src="{% static 'js/clickable.js' %}"></script>
     <script src="{% static 'js/filters.js' %}"></script>
     <script src="{% static 'js/quantity.js' %}"></script>
+    <script src="{% static 'js/no_items.js' %}"></script>
 </body>
 
 </html>
