@@ -2,3 +2,9 @@
 .center {
     background-image: linear-gradient(to right, #B49FCC, #6D466B);
 }
+
+.centralized-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,11 +1,11 @@
 
 function no_items() {
-    // Selecting the elements
+    // Selecting the elements to change
     const no_items = document.getElementById('no_items')
     const amount = document.getElementById('quantity_display')
     const wrapper = document.getElementById('wrapper')
-    
-    // Logic
+
+    // Logic to change the display of the <p> tag and <table>
     if (amount.innerHTML === '0 items') {
         wrapper.classList.add('no-display')
         if (no_items.className === 'no-items no-display') {

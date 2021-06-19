@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from os.path import join
-from os import environ
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -87,6 +87,13 @@ DATABASES = {
         'PASSWORD': 'firmino'
     }
 }
+
+# Heroku Postgres Database
+"""
+DATABASES = {
+    'default': dj_database_url.config()
+}
+"""
 
 
 # Password validation

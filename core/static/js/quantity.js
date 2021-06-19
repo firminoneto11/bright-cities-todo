@@ -4,7 +4,7 @@ for the amount of rows. Also, will change the information of how many elements a
 the table, bellow the table.
 */
 function get_quantity(event) {
-    // Selecting the elements and couting the occurences
+    // Selecting the elements and counting the occurrences
     const tbody = document.getElementById('tbody')
     const tbody_children = tbody.children
     let quantity = 0
