@@ -53,7 +53,7 @@
     text-align: center;
 }
 
-.go_create {
+.back-home {
     font-family: Helvetica;
     display: block;
     padding: 20px;
@@ -63,24 +63,22 @@
     margin-left: auto;
     margin-right: auto;
     text-decoration: none;
-    
+    background-color: #B49FCC;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 99px;
-    
+    color: black;
     transition: 0.3s;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.back-home:hover {
     background-color: #412234;
     color: #ffffff;
 }
 
-.go_create:hover {
-    background-color: #B49FCC;
-    color: black;
-}
-
-.go_create:active {
+.back-home:active {
     background-color: #EAD7D7;
     color: black;
 }
@@ -90,6 +88,7 @@
     margin-right: 0.5rem;
 }
 
-.task-icon path {
-    fill: lightgray;
+.back-home:hover svg path {
+    fill: #ffffff;
+    transition: 0.3s;
 }

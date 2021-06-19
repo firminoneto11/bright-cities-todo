@@ -20,9 +20,9 @@
         <div class="sub-content">
             <h1 class="error-title">500 | Server Error :(</h1>
             <p class="error-message">An error occurred over here while trying to process your request.</p>
-            <a class="go_create" href="{% url 'home' %}"><span class="span-text">Back to home page</span>
+            <a class="back-home" href="{% url 'home' %}"><span class="span-text">Back to home page</span>
                 {% block content %}
-                {% include 'notepad_svg.html' %}
+                {% include 'house_svg.html' %}
                 {% endblock %}
             </a>
         </div>
