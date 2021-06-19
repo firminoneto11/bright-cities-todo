@@ -43,11 +43,12 @@
     font-size: 2rem;
     color: black;
     text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .error-message {
     font-family: Helvetica;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: black;
     text-align: center;
 }
