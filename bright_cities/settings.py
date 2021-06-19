@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # White noise library to serve static files
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -78,6 +79,7 @@ WSGI_APPLICATION = 'bright_cities.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': config('ENGINE'),
@@ -88,13 +90,12 @@ DATABASES = {
         'PASSWORD': config('PASSWORD')
     }
 }
-
-# Heroku Postgres Database
 """
+
+# Heroku Database
 DATABASES = {
     'default': dj_database_url.config()
 }
-"""
 
 
 # Password validation
@@ -134,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

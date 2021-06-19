@@ -17,11 +17,13 @@ Including another URLconf
 from django.contrib import admin
 # Importing the path and include functions from the django.urls module
 from django.urls import path, include
+# Importing python decouple to hide the admin url
+from decouple import config
 
 # Django expects this 'urlpatterns' list to know what look for when a specific route is called via request
 urlpatterns = [
     # django admin route/url
-    path('admin_secure_route/', admin.site.urls),
+    path(config('ADMIN'), admin.site.urls),
     # Including any url/route that is defined in the include function with the core.urls module
     path('', include('core.urls'))
 ]

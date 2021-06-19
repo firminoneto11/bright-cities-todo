@@ -1,0 +1,12 @@
+
+.radio-elements {
+    margin-top: 1rem;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 1rem;
+}
+
+.radio-elements input {
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+}

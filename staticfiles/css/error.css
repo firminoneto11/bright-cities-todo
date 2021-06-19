@@ -1,0 +1,94 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+.center {
+    background-image: linear-gradient(to right, #B49FCC, #6D466B);
+}
+
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }   
+}
+
+.content {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-content {
+    animation: transitionIn 1s;
+    border-radius: 20px;
+    padding: 100px;
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.error-title {
+    font-family: Helvetica;
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+}
+
+.error-message {
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    color: black;
+    text-align: center;
+}
+
+.go_create {
+    font-family: Helvetica;
+    display: block;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99px;
+    
+    transition: 0.3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #412234;
+    color: #ffffff;
+}
+
+.go_create:hover {
+    background-color: #B49FCC;
+    color: black;
+}
+
+.go_create:active {
+    background-color: #EAD7D7;
+    color: black;
+}
+
+/* CSS for the button svg icon */
+.span-text {
+    margin-right: 0.5rem;
+}
+
+.task-icon path {
+    fill: lightgray;
+}

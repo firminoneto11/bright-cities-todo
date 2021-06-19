@@ -7,6 +7,10 @@ from core.models import Task
 
 
 def index(request):
+    """
+    This index view/function will display the data that are stored in the database when a request is sent to it. The da
+    ta will be in the context argument and accessed in the template.
+    """
     context_data = Task.objects.all()
     context = {
         'data': context_data
@@ -15,6 +19,20 @@ def index(request):
 
 
 def task(request, pk):
+    """
+    This task view/function will be responsible for the UPDATE and DELETE actions. The request url will send to this
+    view 2 parameters: The request and a integer code that represents the primary key of a task in the database.
+
+    First, it will check if the method of the request is a GET method, and if it is, will only return the template
+    rendered with the task that has the primary key.
+
+    If the request's method is POST, it will look for 2 values that are defined in the task template: PUT or DELETE. If
+    it's a PUT value, it will update the current task with the data that is passed by the user and if it's a DELETE
+    value, it will delete the current task from the database.
+
+    If either PUT or DELETE case works successfully, the code will redirect the user to the index view to display the
+    tasks that are stored in the database.
+    """
     # Initial data
     current_instance = Task.objects.get(pk=pk)
     context = {'task': current_instance}

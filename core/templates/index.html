@@ -3,6 +3,7 @@
 <html lang="en">
 
 <head>
+    <!--Meta tags-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,8 +16,6 @@
     <link rel="stylesheet" href="{% static 'css/index/do_something.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/go_create.css' %}">
     <link rel="stylesheet" href="{% static 'css/index/no_items.css' %}">
-    <!--Font Awesome-->
-    <script src="https://kit.fontawesome.com/5519e027be.js" crossorigin="anonymous"></script>
     <!--Title-->
     <title>Bright Cities Todo List</title>
     <!--Icon-->
@@ -84,8 +83,8 @@
             <p class="lazy">There are no tasks at the moment :(</p>
             <p class="lazy">Create some!</p>
             <!--Link to the page that will create a new task-->
-            <a class="go_create" href="{% url 'create' %}"><span class="span-text">New task</span><svg
-                    width="20px" class="task-icon" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+            <a class="go_create" href="{% url 'create' %}"><span class="span-text">New task</span><svg width="20px"
+                    class="task-icon" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                     xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#"
                     xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg"
                     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"

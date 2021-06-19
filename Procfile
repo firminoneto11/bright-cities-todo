@@ -1,0 +1,1 @@
+web: gunicorn bright_cities.wsgi --log-file -

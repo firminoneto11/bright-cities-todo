@@ -1,0 +1,89 @@
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }   
+}
+
+.main-content {
+    animation: transitionIn 1s;
+    border-radius: 20px;
+    padding: 100px;
+    width: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    font-family: Helvetica;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+    margin-bottom: 5%;
+}
+
+.subtitle {
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+    margin-bottom: 5%;
+}
+
+.table {
+    border-collapse: collapse;
+    background-color: #EAD7D7;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-size: 1rem;
+    font-family: Helvetica;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.table th {
+    font-family: helvetica;
+    color: #412234;
+    font-size: 1.5rem;
+    border-bottom: #412234 solid 1px;
+    padding: 15px;
+}
+
+.table td{
+    border-bottom: #412234 solid 1px;
+    padding: 15px;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.item {
+    font-family: Helvetica;
+    font-size: 1rem;
+    color: #412234;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.not-completed {
+    text-decoration: none;
+}
+
+.quantity {
+    text-align: right;
+    font-family: helvetica;
+    font-size: 0.9rem;
+    color: black;
+    margin-top: 0.5rem;
+}
