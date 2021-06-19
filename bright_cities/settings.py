@@ -79,25 +79,9 @@ WSGI_APPLICATION = 'bright_cities.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
-DATABASES = {
-    'default': {
-        'ENGINE': config('ENGINE'),
-        'HOST': config('HOST'),
-        'PORT': config('PORT'),
-        'NAME': config('NAME'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD')
-    }
-}
-
-
-# Heroku Database
-"""
 DATABASES = {
     'default': dj_database_url.config()
 }
-"""
 
 
 # Password validation
