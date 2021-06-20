@@ -56,9 +56,8 @@ With a simple and nice interface, users can easily administrate their 'to do' ta
 <h2>Creating a task</h2>
 <p>When the 'New task' button is pressed, the user will be able to create a new task. There are a few things to notice:</p>
 
-- The task name can have a length up to 25 characters;
-- The task name is not optional;
-- The task's description is optional
+- The task name field is not optional and can have a length up to 25 characters;
+- The task's description is optional and it can have a length up to 255 characters;
 
 <p>Bellow we can see the process of creating a task.</p>
 
