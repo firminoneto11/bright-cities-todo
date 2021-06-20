@@ -38,7 +38,9 @@ With a simple and nice interface, users can easily administrate their 'to do' ta
 
 <!--Deploy and Demo-->
 <div align='center'><h2>🚧🚦 Deploy | Demo 🚦🚧</h2></div>
-<p>The project was deployed on the Heroku cloud service, and you can access the demo of it <a href="https://bright-cities-todo.herokuapp.com/" target="_blank">here</a>.</p>
+<p>The project was deployed on the Heroku cloud service, and you can access the demo of it <a href="https://bright-cities-todo.herokuapp.com/" target="_blank">here</a>.<br>
+Also, in order to have the best experience using the application, try to open it on either a desktop or notebook, because i haven't optimized the responsiveness for mobile devices yet, but i will do so soon.
+</p>
 <hr>
 
 <!--Screens-->
